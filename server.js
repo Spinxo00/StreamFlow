@@ -1,17 +1,7 @@
-const express = require('express');
-const path = require('path');
+const express = require('express'); const app = express(); 
+// This will serve static files from the 'public' directory 
+// and automatically set the correct MIME types based on file extensions. 
+app.use(express.static('public'));
 
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-// Serve frontend from "build" (minified) instead of "public"
-app.use(express.static(path.join(__dirname, 'build')));
-
-// SPA fallback
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+app.listen(3000, () => 
+  { console.log('Server listening on port 3000'); });
