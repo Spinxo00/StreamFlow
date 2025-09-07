@@ -1,3 +1,5 @@
+import { DatabaseManager } from '/database.js'; // Adjust the path as needed
+
 // Main Application Controller
 class StreamFlowApp {
     constructor() {
