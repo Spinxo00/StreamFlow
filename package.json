@@ -7,22 +7,11 @@
     "start": "node server.js",
     "dev": "nodemon server.js",
     "build": "npm run copy-files && npm run minify",
-    "copy-files": "cp -r public/* build/",
-    "minify": "terser public/app.js -o build/app.js && terser public/player.js -o build/player.js && terser public/api-manager.js -o build/api-manager.js && terser public/ui-controller.js -o build/ui-controller.js && terser public/database.js -o build/database.js",
+    "copy-files": "mkdir -p build && cp -r public/* build/",
+    "minify": "terser public/app.js -o build/app.js && terser public/player.js -o build/player.js && terser public/ui-controller.js -o build/ui-controller.js",
     "test": "jest",
     "lint": "eslint ."
   },
-  "keywords": [
-    "music",
-    "streaming",
-    "pwa",
-    "ios",
-    "youtube",
-    "soundcloud",
-    "audius"
-  ],
-  "author": "StreamFlow Team",
-  "license": "MIT",
   "dependencies": {
     "express": "^4.18.2",
     "cors": "^2.8.5",
@@ -42,13 +31,5 @@
   "engines": {
     "node": ">=14.0.0",
     "npm": ">=6.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/yourusername/streamflow-music-app"
-  },
-  "bugs": {
-    "url": "https://github.com/yourusername/streamflow-music-app/issues"
-  },
-  "homepage": "https://github.com/yourusername/streamflow-music-app#readme"
+  }
 }
